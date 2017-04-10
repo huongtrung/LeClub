@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="165dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/leaderboard_bg" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civ_leader_board"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/icon_logo"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@+id/civ_leader_board"
+                android:layout_toStartOf="@+id/civ_leader_board"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_brut"
+                    style="@style/text_header_leader_broad"
+                    android:text="8e Brut" />
+
+                <TextView
+                    android:id="@+id/tv_user_brut_score"
+                    style="@style/text_header_leader_broad"
+                    android:text="29 pts" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_toEndOf="@+id/civ_leader_board"
+                android:layout_toRightOf="@+id/civ_leader_board"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_user_net"
+                    style="@style/text_header_leader_broad"
+                    android:text="8e Net" />
+
+                <TextView
+                    android:id="@+id/tv_user_net_score"
+                    style="@style/text_header_leader_broad"
+                    android:text="29 pts" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    <vn.app.base.customview.SegmentedView
+        android:id="@+id/leaderboard_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <TextView
+            style="@style/leaderboard_tab"
+            android:text="Brut"/>
+        <TextView
+            style="@style/leaderboard_tab"
+            android:text="Net"/>
+
+    </vn.app.base.customview.SegmentedView>
+</LinearLayout>

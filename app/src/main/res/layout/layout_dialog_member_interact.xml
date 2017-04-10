@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_opacity">
+
+    <LinearLayout
+        android:layout_width="@dimen/dialog_user_info_w"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_dialog_member_interact"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Contact :"
+            android:textColor="@color/txt_gray"
+            android:textSize="18sp"
+            android:padding="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_dialog_sms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_dialog_sms"
+            android:gravity="center"
+            android:text="SMS"
+            android:textColor="@drawable/bg_tv_sms_interact"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_dialog_call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:background="@drawable/bg_dialog_sms"
+            android:gravity="center"
+            android:text="Call"
+            android:textColor="@drawable/bg_tv_sms_interact"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_dismiss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Annuler"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="@color/white"
+            android:background="@color/ocean_blue"
+            android:textSize="18sp"/>
+    </LinearLayout>
+</RelativeLayout>

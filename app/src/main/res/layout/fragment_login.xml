@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragment.LoginFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/login_bg" />
+
+    <ImageView
+        android:id="@+id/iv_logo_app"
+        android:layout_width="@dimen/image_logo_width"
+        android:layout_height="@dimen/image_logo_height"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_5"
+        android:src="@drawable/icon_logo" />
+
+    <EditText
+        android:id="@+id/et_username_login"
+        style="@style/login_et_bg"
+        android:layout_below="@id/iv_logo_app"
+        android:layout_marginTop="@dimen/margin_100"
+        android:hint="Identifiant"
+        android:text="Julien AVOT"
+        android:lines="1"/>
+
+    <EditText
+        android:text="Generali"
+        android:id="@+id/et_pass_login"
+        style="@style/login_et_bg"
+        android:layout_below="@id/et_username_login"
+        android:layout_marginTop="@dimen/margin_25"
+        android:hint="@string/pass_login"
+        android:lines="1"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"/>
+
+    <Button
+        android:id="@+id/bt_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_pass_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:background="@drawable/button_login"
+        android:text="@string/button_login"
+        android:textColor="@color/white_color"/>
+
+    <TextView
+        android:id="@+id/bt_forget_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_login"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/margin_15"
+        android:text="@string/forget_login"
+        android:textColor="@color/white_color" />
+</RelativeLayout>

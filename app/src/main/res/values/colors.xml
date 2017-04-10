@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004e70</color>
+    <color name="colorPrimaryDark">#004e70</color>
+    <color name="colorAccent">#313131</color>
+    <color name="white_color">#FFFFFF</color>
+    <color name="login_et_txt_unfocus_bg">#96ffffff</color>
+    <color name="login_et_line_focus_bg">#96ffffff</color>
+    <color name="login_btn_unselect_bg">#004e70</color>
+    <color name="login_btn_selected_bg">#00374f</color>
+    <color name="login_et_txt_focus_bg">#ffffff</color>
+    <color name="login_et_line_unfocus_bg">#32ffffff</color>
+    <color name="menu_item_unselect_bg">#00000000</color>
+    <color name="menu_item_selected_bg">#64ffffff</color>
+    <color name="avantages_detail_time_gray">#a3a3a3</color>
+    <color name="title_item_user_profile">#a1a0b7</color>
+    <color name="bg_title_item_user_profile">#ededed</color>
+
+    <color name="base_green">#95c327</color>
+    <color name="dark_green">#87b426</color>
+    <color name="base_gray">#ebecef</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="txt_gray">#a3a3a3</color>
+    <color name="txt_red">#e53935</color>
+    <color name="line_gray">#d6d6d6</color>
+    <color name="underton_gray">#eeeeee</color>
+    <color name="super_dark_gray">#313131</color>
+    <color name="dark_gray">#444444</color>
+    <color name="young_cyan">#52daae</color>
+    <color name="old_blue">#3e4f5f</color>
+    <color name="hope_green">#8fc31f</color>
+    <color name="transparent">#00000000</color>
+    <color name="ocean_blue">#004e70</color>
+    <color name="ocean_blue_light">#b0d7f2</color>
+    <color name="red_sunset">#fd5840</color>
+    <color name="white_opacity">#aaffffff</color>
+    <color name="black_opacity">#33000000</color>
+    <color name="avantages_link_pink">#fd2d55</color>
+    <color name="loading_cover">#88000000</color>
+    <color name="user_item_bg">#d8d8d8</color>
+    <color name="leadeboard_tab_text_unselect">#a4a4a4</color>
+    <color name="leadeboard_tab_text_selected">#004e70</color>
+</resources>

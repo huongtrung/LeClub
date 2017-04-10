@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civ_member_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        android:src="@drawable/icon_logo" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/ll_member_interact"
+        android:layout_toRightOf="@+id/civ_member_avatar">
+
+        <TextView
+            android:id="@+id/tv_fullname_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Julian Avot" />
+
+        <TextView
+            android:id="@+id/tv_member_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_fullname_member"
+            android:layout_marginTop="5dp"
+            android:maxLines="2"
+            android:textSize="16sp"
+            tools:text="Gerant" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_member_interact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/relativeLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp">
+
+        <ImageView
+            android:id="@+id/iv_icon_phone"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/icon_phone" />
+
+        <ImageView
+            android:id="@+id/iv_icon_mail"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/icon_mail" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/civ_member_avatar"
+        android:layout_toRightOf="@+id/civ_member_avatar"
+        android:background="@drawable/bg_item_member_interact"/>
+</RelativeLayout>

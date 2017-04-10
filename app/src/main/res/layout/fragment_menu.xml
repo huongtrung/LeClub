@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_bg"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon_logo" />
+
+    <RelativeLayout
+        android:id="@+id/rl_menu_search"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp">
+
+        <EditText
+            android:id="@+id/et_menu_search"
+            style="@style/menu_et_bg"
+            android:hint="Rechercher"
+            android:imeOptions="actionSearch"
+            android:lines="1"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/iv_menu_search"
+            android:layout_width="@dimen/margin_20"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_search" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_menu_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_menu_search"
+        android:layout_marginTop="@dimen/margin_20"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_menu_agenda"
+            style="@style/tv_menu_main"
+            android:text="Agenda" />
+
+        <TextView
+            android:id="@+id/tv_menu_actualites"
+            style="@style/tv_menu_main"
+            android:text="Actualités" />
+
+        <TextView
+            android:id="@+id/tv_menu_membres"
+            style="@style/tv_menu_main"
+            android:text="Membres" />
+
+        <TextView
+            android:id="@+id/tv_menu_avantages"
+            style="@style/tv_menu_main"
+            android:text="Avantages" />
+
+        <TextView
+            android:id="@+id/tv_menu_leaderbroard"
+            style="@style/tv_menu_main"
+            android:text="Leaderboard" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_menu_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_menu_moncompte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:drawablePadding="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/login_et_txt_unfocus_bg"
+                android:drawableLeft="@drawable/icon_user"
+                android:gravity="center"
+                android:text="MON COMPTE"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_menu_deconnexion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:drawablePadding="10dp"
+                android:layout_gravity="center"
+                android:textColor="@color/login_et_txt_unfocus_bg"
+                android:drawableLeft="@drawable/icon_back"
+                android:gravity="center"
+                android:text="DÉCONNEXION"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

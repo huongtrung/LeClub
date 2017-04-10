@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_opacity">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_dialog_member_interact"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_dialog_member_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/app_name"
+            android:textColor="@color/ocean_blue"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_dialog_member_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:lines="3"
+            android:gravity="center"
+            android:textColor="@color/txt_gray" />
+
+        <TextView
+            android:id="@+id/bt_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/ocean_blue"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="OK"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

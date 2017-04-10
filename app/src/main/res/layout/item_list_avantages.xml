@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/iv_photo"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_advantages_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            tools:text="10% de remise sur les veshicules Peugeot" />
+
+        <TextView
+            android:id="@+id/tv_advantages_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:drawablePadding="8dp"
+            android:drawableRight="@drawable/arrow_pink"
+            android:text="Voir plus"
+            android:textColor="@color/avantages_link_pink"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</RelativeLayout>
