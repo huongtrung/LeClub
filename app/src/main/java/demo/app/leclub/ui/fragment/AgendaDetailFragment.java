@@ -3,6 +3,7 @@ package demo.app.leclub.ui.fragment;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -12,9 +13,15 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.Calendar;
 
 import butterknife.BindView;
@@ -28,6 +35,9 @@ import demo.app.leclub.bean.EventBean;
 import demo.app.leclub.bean.UserProfileBean;
 import demo.app.leclub.constants.HeaderOption;
 import demo.app.leclub.customview.ScrollMapView;
+import demo.app.leclub.geocoder.GecodingListener;
+import demo.app.leclub.geocoder.GeoLatLong;
+import demo.app.leclub.geocoder.ManualGeoCodingRequest;
 import demo.app.leclub.manager.EventManager;
 import demo.app.leclub.manager.UserManager;
 import demo.app.leclub.util.CalendarHelper;
@@ -35,6 +45,7 @@ import vn.app.base.api.response.BaseResponse;
 import vn.app.base.api.volley.callback.ApiObjectCallBack;
 import vn.app.base.imageloader.ImageLoader;
 import vn.app.base.util.DialogUtil;
+import vn.app.base.util.IntentUtil;
 import vn.app.base.util.StringUtil;
 
 /**
@@ -73,6 +84,8 @@ public class AgendaDetailFragment extends HeaderFragment implements OnMapReadyCa
     UserProfileBean userProfileBean;
     private int eventStatus = EVENT_NO_DECIDE;
     EventManager eventManager;
+    LatLng eventPosition;
+    Marker marker;
 
     public static final String AGENDA_DATA = "AGENDA_DATA";
     private AgendaBean agendaBean;
@@ -215,7 +228,7 @@ public class AgendaDetailFragment extends HeaderFragment implements OnMapReadyCa
         return HeaderOption.RIGHT_SEARCH;
     }
 
-    private void handleMapScroll(Bundle stateInstanceState){
+    private void handleMapScroll(Bundle stateInstanceState) {
         scrollMapView.onCreate(stateInstanceState);
         scrollMapView.setViewParent(svDetail);
         scrollMapView.getMapAsync(this);
@@ -237,5 +250,53 @@ public class AgendaDetailFragment extends HeaderFragment implements OnMapReadyCa
             return;
         }
         mMap.setMyLocationEnabled(true);
+        scrollMapView.onResume();
+        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+            @Override
+            public void onInfoWindowClick(Marker marker) {
+                gotoMapAddress();
+            }
+        });
+        setLocationAddress(agendaBean.adresse);
+    }
+
+    private void gotoMapAddress() {
+        Uri mapUri;
+        if (eventPosition !=null)
+//            mapUri = Uri.parse("geo:"+eventPosition.latitude+","+eventPosition.longitude+"?q="+eventPosition.latitude+","+eventPosition.longitude+"&z=17");
+            mapUri = Uri.parse("geo:" + eventPosition.latitude + "," + eventPosition.longitude + "?q=" +eventPosition.latitude + "," + eventPosition.longitude + "&z=15");
+        else
+            mapUri = Uri.parse("geo:0,0?z=17&q="+getDecodeAddress(eventBean.adresse));
+        IntentUtil.openMap(getActivity(),mapUri);
+    }
+
+    private String getDecodeAddress(String address) {
+        try {
+            return URLDecoder.decode(address, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            return address.replace(" ", "+");
+        }
+    }
+
+    private void setLocationAddress(final String address) {
+        ManualGeoCodingRequest manualGeoCodingRequest = new ManualGeoCodingRequest(address);
+        manualGeoCodingRequest.setGecodingListener(new GecodingListener() {
+            @Override
+            public void onSuccess(GeoLatLong latLong) {
+                eventPosition = new LatLng(latLong.lat, latLong.lng);
+                if (marker == null) {
+                    marker = mMap.addMarker(new MarkerOptions().position(eventPosition).title(address));
+                } else {
+                    marker.setPosition(eventPosition);
+                }
+                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eventPosition, 15f));
+            }
+
+            @Override
+            public void onFail(String message) {
+
+            }
+        });
+        manualGeoCodingRequest.execute();
     }
 }

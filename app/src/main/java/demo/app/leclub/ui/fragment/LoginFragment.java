@@ -54,12 +54,10 @@ public class LoginFragment extends NoHeaderFragment {
 //    }
 
     private void toggleLogin(){
-        if (StringUtil.checkStringValid(userName) && StringUtil.checkStringValid(password)){
+        if (StringUtil.checkStringValid(userName) && StringUtil.checkStringValid(password))
             btLogin.setEnabled(true);
-        }
-        else {
+        else
             btLogin.setEnabled(false);
-        }
     }
     @Override
     protected int getLayoutId() {
@@ -114,7 +112,6 @@ public class LoginFragment extends NoHeaderFragment {
                 loginResponse = data;
                 handleLoginSuccess();
             }
-
             @Override
             public void onFail(int failCode, String message) {
                 hideCoverNetworkLoading();
