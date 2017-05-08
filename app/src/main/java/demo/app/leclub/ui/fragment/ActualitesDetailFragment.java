@@ -26,7 +26,7 @@ public class ActualitesDetailFragment extends HeaderFragment {
     @BindView(R.id.tv_actualites_detail_title)
     TextView tvDetailTitle;
     @BindView(R.id.tv_actualites_detail_date)
-    TextView tvDetaiDate;
+    TextView tvDetailDate;
     @BindView(R.id.tv_actualites_detail_content)
     TextView tvDetailContent;
     @BindView(R.id.tv_actualites_detail_link)
@@ -60,7 +60,7 @@ public class ActualitesDetailFragment extends HeaderFragment {
         if (newBean != null) {
             ImageLoader.loadImage(getContext(), newBean.image, ivPhoto);
             StringUtil.displayText(newBean.titre, tvDetailTitle);
-            StringUtil.displayText(newBean.date, tvDetaiDate);
+            StringUtil.displayText(newBean.date, tvDetailDate);
             StringUtil.displayText(newBean.shortDescription, tvDetailContent);
             if (StringUtil.checkStringValid(newBean.lien))
                 StringUtil.displayText(newBean.lien, tvDetailLink);
